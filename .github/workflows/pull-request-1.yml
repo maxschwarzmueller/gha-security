@@ -1,0 +1,11 @@
+name: Pull Request Analysis 1
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  analyze:  
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: echo "${{ toJSON(github) }}"
