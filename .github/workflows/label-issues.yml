@@ -10,6 +10,9 @@ jobs:
       - name: Assign label
         # if: |
         run: |
-          issue_title="${{ github.event.issues.issue.title }}"
-          echo "${{ toJSON(github.event) }}"
-          echo "$issue_title"
+          issue_title="${{ github.event.issue.title }}"
+          if [[ "$issue_title" == *"bug"* ]]; then
+          echo "Issue is about a bug!"
+          else
+          echo "Issue is not about a bug"
+          fi
