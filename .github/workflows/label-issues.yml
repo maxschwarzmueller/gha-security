@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign label
-        if: |
+        # if: |
+        run: |
           issue_title="${{ github.event.issues.issue.title }}"
           echo "${{ toJSON(github.event) }}"
           echo "$issue_title"
