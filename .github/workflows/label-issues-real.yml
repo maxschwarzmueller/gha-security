@@ -19,3 +19,4 @@ jobs:
           -d '{
               "labels": ["bug"]
             }' \
+          --fail
