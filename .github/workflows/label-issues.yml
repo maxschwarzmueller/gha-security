@@ -1,0 +1,14 @@
+name: Label Issues
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  assign-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign label
+        if: |
+          issue_title="${{ github.event.issues.issue.title }}"
+          echo "${{ toJSON(github.event) }}"
+          echo "$issue_title"
