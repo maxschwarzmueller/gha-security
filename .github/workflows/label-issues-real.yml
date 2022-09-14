@@ -1,10 +1,12 @@
-name: Label Issues
+name: Label Issues (Real)
 on:
   issues:
     types:
       - opened
 jobs:
   assign-label:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Assign label
